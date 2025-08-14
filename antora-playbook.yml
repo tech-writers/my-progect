@@ -36,10 +36,10 @@ ui:
     snapshot: true
   supplemental_files: ./docs/ui-files/ui-bundle-style
 
-# antora:
-#   extensions:
-#     - require: '@antora/lunr-extension'
-#       languages: [en, ru]
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      languages: [en, ru]
 
 asciidoc:
   # РЕКОМЕНДАЦИЯ: заменить plantuml на kroki (работает в Antora)
