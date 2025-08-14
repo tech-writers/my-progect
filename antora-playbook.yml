@@ -1,0 +1,118 @@
+site:
+  title: Набор компонентов
+  # на GitHub Pages можно не указывать url, либо указать свой домен
+  start_page: data-processing-engine::index.adoc
+
+content:
+  sources:
+    - url: .
+      branches: main
+      start_path: docs/components/data-processing-engine
+    - url: .
+      branches: main
+      start_path: docs/components/integration-module
+    - url: .
+      branches: main
+      start_path: docs/components/reporting-module
+    - url: .
+      branches: main
+      start_path: docs/components/security-subsystem
+    - url: .
+      branches: main
+      start_path: docs/components/technical-project
+    - url: .
+      branches: main
+      start_path: docs/components/user-guide
+    - url: .
+      branches: main
+      start_path: docs/components/common
+
+ui:
+  bundle:
+    # можно оставить свой файл, если он в репозитории:
+    # url: ./docs/ui-files/ui-bundle.zip
+    # или подключить дефолтную тему Antora по URL:
+    url: ./docs/ui-files/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./docs/ui-files/ui-bundle-style
+
+# antora:
+#   extensions:
+#     - require: '@antora/lunr-extension'
+#       languages: [en, ru]
+
+asciidoc:
+  # РЕКОМЕНДАЦИЯ: заменить plantuml на kroki (работает в Antora)
+  # extensions:
+  #   - asciidoctor-kroki
+  attributes:
+    # kroki-server-url: https://kroki.io
+    allow-uri-read: ''         # для include:: с URL
+    experimental: ''           # включает расширенные блоки (tabs и т.п.)
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+    env-antora: ' '
+
+output:
+  dir: build/site
+
+runtime:
+  fetch: true
+
+  
+# site:
+#   title: Набор компонентов
+#   url: http://localhost:8080
+#   # url: /Users/vvv/OKN-new-comp/okn-new-comp/build/site/doc-apu/1/index.html
+#   start_page: data-processing-engine::index.adoc
+
+# content:
+#   sources:
+
+#     - url: .
+#       branch: main
+#       start_path: .
+
+# # content:
+# #   sources:
+
+# #     - url: ./
+# #       start_path: docs/components/data-processing-engine
+# #     - url: ./
+# #       start_path: docs/components/integration-module
+# #     - url: ./
+# #       start_path: docs/components/reporting-module
+# #     - url: ./
+# #       start_path: docs/components/security-subsystem
+# #     - url: ./
+# #       start_path: docs/components/technical-project
+# #     - url: ./
+# #       start_path: docs/components/user-guide
+# #     - url: ./
+# #       start_path: docs/components/common
+
+# ui:
+#   bundle:
+#     url: ./docs/ui-files/ui-bundle.zip
+#   supplemental_files: ./docs/ui-files/ui-bundle-style
+
+# antora:
+#   extensions:
+#   # - asciidoctor-plantuml
+#   - require: '@antora/lunr-extension'
+#     languages: [en, ru]
+
+# asciidoc:
+#   extensions:
+#     - asciidoctor-plantuml          # расширение подключено
+#   attributes:
+#     plantuml-server-url: https://www.plantuml.com/plantuml   # сервер задан
+#     allow-uri-read: ''             # (опция, если нужен include::)    experimental: ''
+#     idprefix: ''
+#     idseparator: '-'
+#     page-pagination: ''
+#     env-antora: ' '
+
+# output:
+#   dir: build/site

@@ -1,0 +1,2 @@
+* xref:index.adoc[Общее руководство пользователя]
+** xref:all-user-guide:index.adoc[Сводное руководство пользователя]

@@ -1,0 +1,19 @@
+:doctype: book
+:toc: left
+:toclevels: 2
+:plantuml-server-url: https://www.plantuml.com/plantuml
+:!chapter-signifier:
+:figure-caption!:
+:imagesdir: ../images
+:table-caption!:
+// :toc: macro
+:toc-title: Содержание
+:chapter-refsig: разделе
+:section-refsig: разделе
+:sectnumlevels: 5
+:ramka: 2
+// :sectnums!:
+
+
+:sectnums:
+

@@ -1,0 +1,1 @@
+// partials для system-programmer-guide компонента reporting-module

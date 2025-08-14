@@ -1,0 +1,18 @@
+# # version: '3.9'
+
+# services:
+#   apu-builder:
+#     build: .
+#     container_name: apu-pdf-builder
+#     volumes:
+#       - .:/app
+#     working_dir: /app
+#     command: ruby docs/ruby/start.rb
+services:
+  apu-builder:
+    build: .
+    container_name: apu-pdf-builder
+    volumes:
+      - ../..:/app
+    working_dir: /app
+    command: ruby docs/ruby/start.rb

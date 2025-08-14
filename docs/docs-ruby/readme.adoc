@@ -1,0 +1,90 @@
+== Сборка pdf 
+
+Из корня репозитория okn-m-monorepo запустить команду: 
+
+----
+ruby ./docs/ruby/start.rb
+----
+
+== Рекомендации ChatGPT
+
+# 📘 APU PDF Generator
+
+Генерация PDF-документов из AsciiDoc файлов с помощью Ruby и Asciidoctor внутри Docker-контейнера.
+
+---
+
+## 🐳 Запуск в Docker
+
+### 1. Сборка контейнера
+```bash
+docker-compose build
+```
+
+### 2. Запуск генерации всех PDF
+```bash
+./build.sh
+```
+Из корня проекта 
+----
+./docs/docs-ruby/build.sh 
+----
+
+----
+asciidoctor-pdf -r ./docs/ruby/convert_ascii_to_pdf_1--.rb -a pdf-theme=report -a pdf-themesdir=docs/resources/themes -a pdf-fontsdir=docs/resources/fonts docs/components/data-processing-engine/modules/hardware-complex/pages/index.adoc
+----
+
+> 📌 По умолчанию запускается `ruby docs/ruby/start.rb`, который обрабатывает все модули и собирает PDF-документы в `docs/pdf/pages/`
+
+---
+
+## ⚙️ Альтернативные команды
+
+Запуск одного скрипта:
+```bash
+docker-compose run --rm apu-builder ruby docs/ruby/parsing_all_doc.rb пп им
+```
+
+Очистка PDF и таблиц:
+```bash
+docker-compose run --rm apu-builder ruby docs/ruby/delete_files.rb
+```
+
+---
+
+## 📁 Структура проекта
+
+```
+├── Dockerfile
+├── docker-compose.yml
+├── build.sh
+├── .dockerignore
+├── docs/
+│   ├── ruby/                  # Ruby-скрипты
+│   ├── pdf/pages/             # Выходные PDF-файлы
+│   ├── documentation/modules/ # AsciiDoc источники
+│   └── resources/             # Темы и шрифты
+```
+
+---
+
+## 🧪 CI/CD Интеграция
+
+Для использования в CI (например, GitLab CI или GitHub Actions):
+
+- сборка: `docker build -t apu-pdf-builder .`
+- запуск: `docker run --rm -v $(pwd):/app apu-pdf-builder`
+- результаты: в `docs/pdf/pages/`
+
+---
+
+## 📌 Зависимости (в контейнере)
+- Ruby 3.2
+- asciidoctor
+- asciidoctor-pdf
+- fonts-liberation, fonts-dejavu
+
+---
+
+## 👤 Контакты
+Для уточнений по структуре AsciiDoc или Ruby-скриптам — обращайтесь к автору проекта ✉️

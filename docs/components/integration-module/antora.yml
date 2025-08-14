@@ -1,0 +1,5 @@
+name: integration-module
+title: Взаимодействия с внешними системами
+version: 1.0
+nav:
+  - modules/ROOT/nav.adoc

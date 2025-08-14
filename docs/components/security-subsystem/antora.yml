@@ -1,0 +1,5 @@
+name: security-subsystem
+title: Подсистема безопасности
+version: 1.0
+nav:
+  - modules/ROOT/nav.adoc

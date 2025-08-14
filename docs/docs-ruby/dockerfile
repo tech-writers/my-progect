@@ -1,0 +1,30 @@
+# Используем минимальный Ruby-образ
+FROM ruby:3.2-slim
+
+# Устанавливаем системные зависимости
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    libcurl4-openssl-dev \
+    libffi-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    zlib1g-dev \
+    fonts-liberation \
+    fonts-dejavu \
+    unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем Ruby-гемы для генерации PDF
+RUN gem install bundler asciidoctor asciidoctor-pdf --no-document
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем весь проект в контейнер
+COPY . .
+
+# Запуск по умолчанию — основной Ruby-скрипт
+CMD ["ruby", "docs/ruby/start.rb"]
+

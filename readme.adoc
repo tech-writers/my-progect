@@ -1,0 +1,123 @@
+:stylesheet: asciidoc-preview.css
+:stylesdir: .
+:last-update-label!:
+
+Структура component: 
+
+* antora.yml;
+* modules;
+* non-docs-modules.
+
+Структура modules:
+
+* named-module-1;
+* named-module-2;
+* named-module-n;
+* ROOT;
+* nav.adoc.
+
+
+Структра named-modules:
+
+* attachments;
+* partials;
+* pages;
+* images;
+* examples.
+
+
+Компонентом может быть следующая документация:
+
+* документация технического проекта;
+* эксплуатационная документация;
+* проект с эксплуатационной и техническоой документацией;
+* компонент ПО с набором документации;
+* различные документы объединенные одним договором;
+* и другое.
+
+Формирование pdf
+
+----
+asciidoctor-pdf -r ./ruby/start.rb -a pdf-theme=report -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts file.adoc
+----
+
+----
+ruby ./docs/ruby/start.rb
+----
+
+Формирование site:
+----
+npx antora antora-playbook.yml
+----
+
+Запуск сервера:
+
+----
+npx http-server build/site -c-1  
+----
+
+Пример файла antora-playbook.yml:
+
+[source, yml]
+----
+site:
+  title: Doc
+
+content:
+  sources:
+  - url: /dfgdfgdf
+    branches: dfgfd
+    # setting edit_url to false disables the Edit this Page link for any page that originates from this repository
+    # the same thing can be achieved by adding empty credentials (i.e., @) in front of the domain in the URL
+    edit_url: false
+   
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+ui:
+  bundle:
+    url: /Users/vvv/demo/apiman-antora-ui/build/ui-bundle.zip
+    snapshot: true
+
+----
+
+// документации, например документация технического проекта,эксплуатационная документация. 
+
+== Правки по проекту
+
+Чтобы внести правку вручную во всём проекте, сделай поиск‑замену:
+
+. в корне components:
+----
+grep -R --line-number -e 'ПЗ к ТП' .
+----
+
+Это покажет все файлы, в которых есть 'ПЗ к ТП' и номера строк. Убедись, что вывод показывает только нужные файлы
+
+Затем:
+----
+sed -i '' -e 's/ПЗ к ТП/ПЗТП/g' $(grep -R -l 'ПЗ к ТП' .)
+----
+
+Это заменит 'ПЗ к ТП' на 'ПЗТП' во всех файлах, которые были найдены в предыдущем шаге. 
+
+Если нужно заменить только в одном файле, то:
+----
+sed -i '' -e 's/ПЗ к ТП/ПЗТП/g' file.adoc
+----
+
+это заменит 'ПЗ к ТП' на 'ПЗТП' только в file.adoc
+
+Создан файл replace-text.sh 
+который заменяет текст в файлах, которые находятся в папке, которая передана в качестве аргумента.
+В качестве второго аргумента передается текст, который нужно заменить, а в качестве третьего аргумента передается текст, на который нужно заменить.
+
+----
+chmod +x replace-text.sh 
+----
+----
+./replace-text.sh docs/components 'ПЗ к ТП' 'ПЗТП'
+----

@@ -1,0 +1,303 @@
+extends: default
+
+title_page:
+  # margin: [20mm, 30mm, 20mm, 30mm]  
+  text_align: center
+  logo:
+    top: 10%
+  title:
+    font_size: 14
+    font-style: bold
+    text-align: center
+    text-transform: uppercase
+    line_height: 1
+  subtitle:
+    font_size: 14
+    font_style: bold
+    line_height: 1
+    content: '{page-count}'
+  city:
+    font_style: normal
+    line_height: 1
+    font_size: 14
+    content: '{page-count}'
+  authors:
+    margin_top: $base_font_size * 1.25
+    font_size: $base_font_size_large
+    # font_color: 181818
+  revision:
+    margin_top: $base_font_size * 1.25
+
+font:
+  catalog:
+    merge: false
+    
+    M+ 1mn:
+      normal: times-new-roman-normal.ttf
+      bold: times-new-roman-bold.ttf
+      italic: times-new-roman-italic.ttf
+      bold_italic: times-new-roman-bold-italic.ttf
+
+    Times New Roman:
+      normal: times-new-roman-normal.ttf
+      bold: times-new-roman-bold.ttf
+      italic: times-new-roman-italic.ttf
+      bold_italic: times-new-roman-bold-italic.ttf
+      
+
+page:
+  # page_margin_landscape: [40,0,0,0]
+  # page_margin_portrait: [34,0,0,0]
+  # margin-inner: 0
+  # margin-outer: 0
+  size: A4
+  margin: [15mm, 7mm, 20mm, 20mm]
+  margin-rotated: [15mm, 7mm, 20mm, 10mm]
+  mode: fullscreen thumbs
+
+# считает нумерацию с титульной страницы
+  numbering:
+    start-at: title 
+# запускает печать колонтитулов со второй страницы
+running-content:
+    start-at: 2
+
+
+header:
+  font_size: 12
+  text-align: center
+  # NOTE if background_color is set, background and border will span width of page
+  border_color: 0000000
+  border_width: 0
+  height: 10mm
+  line_height: 1
+  # padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: top
+  recto:
+    # left:
+    #   content: ''
+    right:
+      content: ''
+    center:
+      content: 
+  verso:
+    left:
+    #   content: ''
+    # right:
+      content: ''
+    center:
+      content: ''
+
+footer:
+  font-family: Times New Roman
+  font_size: 12
+  text-align: center
+  # NOTE if background_color is set, background and border will span width of page
+  border_color: 000000
+  border_width: 0
+  height: 15mm
+  line_height: 1.15
+  # padding: [$base_line_height_length / 2, 1, 0, 1]
+  vertical_align: center
+  recto:
+    left:
+      text-align: left
+      content: 
+    right:
+      content: ''
+    center:
+      content: ''
+  verso:
+    left:
+      text-align: left
+      content: 
+    right:
+      content: ''
+    center:
+      content: ''
+
+table:
+  font-family: Times New Roman
+  # padding: [0, 0, 0, 0]
+  border-width: 0.5
+  grid-width: [0.5, 0.5]
+  font-size: 12
+  line-height: 1
+  grid-color: 707070
+  border-color: 707070
+  caption:
+    font-family: Times New Roman
+    font-size: 14
+    align: left
+    font-style: normal
+    line-height: 1.13
+  head:
+    border-bottom-width: 0.5
+    font-style: bold
+  text-indent: 0
+
+image:
+  align: center
+  border-fit: auto
+  # border-width: 0.5cm
+  # border-color: FFFFFF
+  caption:
+    font-family: Times New Roman
+    font-size: 14
+    align: center
+    font-style: normal
+    line-height: 1.13
+
+# заменяет ссылки на черный цвет
+link:
+    font_color: 333333
+  
+role:
+  my-title-table:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: normal
+    text-align: left
+  custom-heading:
+    font-family: Times New Roman
+    font-size: 14
+    font_style: bold
+    align: right
+  my-table-text:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: normal
+    text-align: left
+  my-bold-title:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: bold
+    text-align: center
+  my-bold-table:
+    font-family: Times New Roman
+    font-size: 12
+    font-style: bold
+    text-align: center    
+  append-style-right:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: bold
+    text-align: right
+  table-style-center:
+    font-family: Times New Roman
+    font-size: 12
+    font-style: normal
+    text-align: center
+  table-style-left:
+    font-family: Times New Roman
+    font-size: 12
+    font-style: normal
+    text-align: left
+  append-name-style:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: normal
+    text-align: center
+  my-uppercase-title:
+    font-family: Times New Roman
+    font-size: 14
+    font-style: bold
+    text-align: center
+    text-transform: uppercase
+    line-height: 1.5
+
+  my-table-comment:
+    font-family: Times New Roman
+    margin_top: 0
+    padding: [0, 0, 0, 0]
+    font-size: 7
+    font-style: normal
+    text-align: center
+    text-vertical-align: top
+    valign: top
+    line-height: 1
+
+  my-table-comment-main:
+    font-family: Times New Roman
+    font-size: 12
+    font-style: normal
+    text-align: center
+    text-decoration: underline
+    # text-transform: uppercase
+    line-height: 1
+
+base:
+  font-family: Times New Roman
+  font-size: 14
+  # text-transform: uppercase
+  text-align: justify
+  text-indent: 1.25cm
+  margin_top: 1.5
+  margin_bottom: 1.5
+  line-height: 1.5
+
+list:
+  line-height: 1.5
+  # text-indent-inner: 1.25cm
+  # text-indent: 1.5cm
+  text-align: justify
+  # margin_top: 1
+  # margin_bottom: 1
+  # text-indent: 2cm
+  indent: 1.9cm
+  item-spacing: 1
+
+# olist:
+#   indent: 0.5cm
+
+# ulist:
+#   indent: 0.5cm
+
+prose:
+  text-indent: 1.25cm
+  text-indent-inner: 0.5cm
+  line-height: 1.5
+  margin_top: 1.5
+  margin_bottom: 1.5
+  
+heading:
+  # break-before: always
+  # break-after: always  
+  font-style: bold
+  line-height: 1.5
+  h2-font-size: 14
+  h3-font-size: 14
+  h4-font-size: 14
+  h5-font-size: 14
+  h6-font-size: 14
+  h7-font-size: 14
+
+  h2-padding: [0, 0, 0, 1.25cm]
+  h3-padding: [0, 0, 0, 1.25cm]
+  h4-padding: [0, 0, 0, 1.25cm]
+  h5-padding: [0, 0, 0, 1.25cm]
+  h6-padding: [0, 0, 0, 1.25cm]
+  h7-padding: [0, 0, 0, 1.25cm]
+
+  h2-text-align: left
+  h3-text-align: left
+  h4-text-align: left
+  h5-text-align: left
+  h6-text-align: left
+  h7-text-align: left
+  text-indent: 1.25cm
+
+
+  # chapter:
+  #   break-before: always  # or always
+  #   break-after: always
+  # part:
+  #   break-before: always
+  #   break-after: always
+    
+    
+  chapter:
+    break-before: auto
+    break-after: auto    
+
+

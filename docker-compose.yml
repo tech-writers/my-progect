@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  antora:
+    image: docs-antora-antora:latest
+    build:
+      context: .
+    volumes:
+      - .:/antora
+    working_dir: /antora
+    command: antora-playbook.yml

@@ -1,0 +1,113 @@
+= Подсистема безопасности
+ifdef::env-antora[]
+include::common:ROOT:partial$attr-common.adoc[]
+endif::[]
+
+ifndef::env-antora[]
+include::../../../../common/modules/ROOT/partials/attr-common.adoc[]
+endif::[]
+
+== Назначение компонента
+
+Компонент предназначен для выполнения ключевых функций в рамках программной системы.
+
+== Структура
+
+* Комплекс технических средств
+* Руководство пользователя
+* Описание программы
+* Руководство системного программиста
+
+== Архитектурная схема компонента
+
+----
+----
+
+
+== Схема взаимодействия подсистем
+
+.Схема архитектуры компонента
+----
+----
+
+.Схема взаимодействия компонентов всей системы
+----
+----
+
+
+== Схема взаимодействия подсистем
+
+.Схема архитектуры компонента
+----
+----
+
+.Схема взаимодействия компонентов всей системы
+----
+----
+
+
+== Схема взаимодействия подсистем
+
+[plantuml, architecture, svg]
+----
+include::../examples/architecture.puml[]
+----
+
+.Схема архитектуры компонента
+[plantuml, format=svg]
+----
+@startuml name
+participant Participant as Foo
+actor       Actor       as Foo1
+boundary    Boundary    as Foo2
+control     Control     as Foo3
+entity      Entity      as Foo4
+database    Database    as Foo5
+collections Collections as Foo6
+queue       Queue       as Foo7
+Foo -> Foo1 : To actor 
+Foo -> Foo2 : To boundary
+Foo -> Foo3 : To control
+Foo -> Foo4 : To entity
+Foo -> Foo5 : To database
+Foo -> Foo6 : To collections
+Foo -> Foo7 : To queue
+@enduml
+
+----
+
+
+
+.Схема взаимодействия компонентов всей системы
+[plantuml, format=svg]
+----
+@startuml
+title Схема взаимодействия компонентов системы
+
+package "Внешние системы" {
+  [Сторонняя ИС] as ExternalSystem
+}
+
+package "Взаимодействие" {
+  [Интеграционный модуль] as Integration
+}
+
+package "Обработка данных" {
+  [Ядро обработки] as Engine
+}
+
+package "Отчётность" {
+  [Модуль отчётов] as Reports
+}
+
+package "Безопасность" {
+  [Подсистема безопасности] as Security
+}
+
+ExternalSystem --> Integration : API / файлы
+Integration --> Engine : события
+Engine --> Reports : агрегированные данные
+Engine --> Security : проверка доступа
+@enduml
+
+----

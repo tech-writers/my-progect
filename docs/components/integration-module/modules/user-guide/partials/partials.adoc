@@ -1,0 +1,1 @@
+// partials для user-guide компонента integration-module

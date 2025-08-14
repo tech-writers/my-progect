@@ -1,0 +1,6 @@
+@startuml name
+ExternalSystem --> Integration : API / файлы
+Integration --> Engine : события
+Engine --> Reports : агрегированные данные
+Engine --> Security : проверка доступа
+@enduml

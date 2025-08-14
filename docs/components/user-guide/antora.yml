@@ -1,0 +1,5 @@
+name: user-guide
+title: Общее руководство пользователя
+version: 1.0
+nav:
+  - modules/ROOT/nav.adoc

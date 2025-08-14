@@ -1,0 +1,18 @@
+# Исключаем ненужные файлы и папки из сборки
+.git
+*.log
+*.pdf
+*.DS_Store
+__pycache__/
+docs/pdf/pages/
+temp/
+*.swp
+*.bak
+/../docs/pdf/pages
+backend
+backend_muo
+bpmn-processes
+cpp
+diagnostic
+frontend
+tests

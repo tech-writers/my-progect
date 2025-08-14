@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bpmn-renderer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    command: node docs/docs-bpmn/bpmn-to-svg.js

@@ -1,0 +1,5 @@
+* xref:index.adoc[Модуль формирования отчётов]
+** xref:hardware-complex:index.adoc[Комплекс технических средств]
+** xref:user-guide:index.adoc[Руководство пользователя]
+** xref:program-description:index.adoc[Описание программы]
+** xref:system-programmer-guide:index.adoc[Руководство системного программиста]
