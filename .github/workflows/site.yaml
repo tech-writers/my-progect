@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run Ruby pre-build script
+        run: ruby docs/ruby/start.rb
+
       - name: Build site
         run: |
           npx -y antora@3 antora-playbook.yml
